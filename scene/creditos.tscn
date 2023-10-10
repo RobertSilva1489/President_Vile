@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://tgx2sxf3aqp3"]
+
+[node name="creditos" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+texture_repeat = 2
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 795.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 14
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 14
+text = "Creditos
+sprite, sfx and font from it.oi uses:
+-NYKNCK
+-dammitbird
+-Adam Saltsman
+-Steampunkdemon
+-planarian BGM
+-ansimuz
+-dabolka
+-Elthen's Pixel Art Shop
+-BrainzPlayz
+-rgbin
+-HZSMITH
+-David G
+-seartsy
+-Trident19
+-g.lerf
+-FoozleCC
+-IronnButterfly
+-Maytch
+-old_flick
+-Frontend Pashtet
+-poohcom1
+-Kenney 
+"
+horizontal_alignment = 1
+uppercase = true
+language = "pt"

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://d06d1ambtfur7"]
+
+[ext_resource type="Texture2D" uid="uid://cllygt1t3328f" path="res://assents/backgroud/flatLight22.png" id="1_7fsi6"]
+[ext_resource type="Texture2D" uid="uid://7llbp0f5dpjl" path="res://assents/backgroud/flatLight23.png" id="2_aamao"]
+[ext_resource type="Texture2D" uid="uid://cy2mjaiij23x6" path="res://assents/backgroud/flatLight24.png" id="3_mimnp"]
+[ext_resource type="Texture2D" uid="uid://b0fkfun8fqevq" path="res://assents/backgroud/flatLight36.png" id="4_i1l6i"]
+[ext_resource type="Texture2D" uid="uid://cv56fgrrdevxh" path="res://assents/backgroud/flatLight35.png" id="4_vlrvj"]
+[ext_resource type="Texture2D" uid="uid://bxuprdtjarvtd" path="res://assents/backgroud/flatLight34.png" id="6_4fa7h"]
+[ext_resource type="Texture2D" uid="uid://dmsx3qubuspkd" path="res://assents/backgroud/flatLight37.png" id="6_b7gs4"]
+
+[node name="mobile" type="CanvasLayer"]
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2(80, 380.8)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_7fsi6")
+passby_press = true
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2(192, 380.8)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("2_aamao")
+passby_press = true
+action = "ui_right"
+
+[node name="down" type="TouchScreenButton" parent="."]
+position = Vector2(192, 504)
+rotation = -3.14159
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_mimnp")
+passby_press = true
+action = "ui_accept"
+
+[node name="jump" type="TouchScreenButton" parent="."]
+position = Vector2(584, 448)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("4_i1l6i")
+passby_press = true
+action = "jump"
+
+[node name="fire" type="TouchScreenButton" parent="."]
+position = Vector2(528, 392)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("4_vlrvj")
+passby_press = true
+action = "shoot"
+
+[node name="reload" type="TouchScreenButton" parent="."]
+position = Vector2(584, 336)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("6_b7gs4")
+passby_press = true
+action = "reload"
+
+[node name="interactive" type="TouchScreenButton" parent="."]
+position = Vector2(640, 392)
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("6_4fa7h")
+passby_press = true
+action = "action"
+visibility_mode = 1

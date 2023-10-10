@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://cdihkn50cyu6c"]
+
+[ext_resource type="Script" path="res://script/END.gd" id="1_58dav"]
+[ext_resource type="Texture2D" uid="uid://bv8giyio07sgq" path="res://assents/backgroud/Menu  col_Button.png" id="2_7icqp"]
+[ext_resource type="Texture2D" uid="uid://djaocsl2qxj3d" path="res://assents/backgroud/0ogjm3-transformed.jpeg" id="2_or2d7"]
+[ext_resource type="Shader" path="res://shader/wind.gdshader" id="3_iyuv0"]
+[ext_resource type="Texture2D" uid="uid://th5f6jy31auh" path="res://assents/backgroud/Quit  col_Button.png" id="3_jdq3s"]
+[ext_resource type="FontFile" uid="uid://bvn44tjeyrw5l" path="res://fonts/HelpMe.ttf" id="4_p70kf"]
+[ext_resource type="AudioStream" uid="uid://duuyf43umvrga" path="res://sfx/Select3.wav" id="6_wae8l"]
+[ext_resource type="PackedScene" uid="uid://tgx2sxf3aqp3" path="res://scene/creditos.tscn" id="8_tbs58"]
+[ext_resource type="AudioStream" uid="uid://d2c0qx48vstx" path="res://sfx/industrial.ogg" id="9_y1ufs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lqotu"]
+shader = ExtResource("3_iyuv0")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.01
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[sub_resource type="Theme" id="Theme_wp5mq"]
+default_font = ExtResource("4_p70kf")
+default_font_size = 70
+
+[node name="end" type="Node2D"]
+script = ExtResource("1_58dav")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 1)
+scale = Vector2(0.624219, 0.595)
+texture = ExtResource("2_or2d7")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 314.0
+offset_top = 336.0
+offset_right = 506.0
+offset_bottom = 532.0
+
+[node name="Label" type="Label" parent="Control"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_lqotu")
+layout_mode = 0
+offset_left = -231.0
+offset_top = -302.0
+offset_right = 392.0
+offset_bottom = -134.0
+theme = SubResource("Theme_wp5mq")
+theme_override_colors/font_color = Color(0.937255, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "missao concluida
+
+voce pegou a amostra"
+horizontal_alignment = 1
+
+[node name="MenuBar" type="MenuBar" parent="Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 175.0
+offset_bottom = 175.0
+
+[node name="Button" type="Button" parent="Control/MenuBar"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 50.0
+offset_right = 133.0
+offset_bottom = 79.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MenuBar/Button"]
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("2_7icqp")
+centered = false
+
+[node name="Button2" type="Button" parent="Control/MenuBar"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 96.0
+offset_right = 134.0
+offset_bottom = 125.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MenuBar/Button2"]
+scale = Vector2(0.145, 0.145)
+texture = ExtResource("3_jdq3s")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_wae8l")
+pitch_scale = 1.5
+
+[node name="creditos" parent="." instance=ExtResource("8_tbs58")]
+offset = Vector2(-130, 192)
+scale = Vector2(0.8, 0.8)
+transform = Transform2D(0.8, 0, 0, 0.8, -130, 192)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_y1ufs")
+pitch_scale = 1.5
+autoplay = true

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca3ct8r6s86b"]
+
+[ext_resource type="Texture2D" uid="uid://bt8l2h56f1g6p" path="res://assents/backgroud/secret/Door2_pipo.png" id="1_hunk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f60jk"]
+atlas = ExtResource("1_hunk6")
+region = Rect2(96, 96, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyo6e"]
+atlas = ExtResource("1_hunk6")
+region = Rect2(96, 96, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvegs"]
+atlas = ExtResource("1_hunk6")
+region = Rect2(128, 96, 32, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it7lm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f60jk")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyo6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvegs")
+}],
+"loop": false,
+"name": &"open",
+"speed": 1.0
+}]
+
+[node name="Exist door lab" type="Node2D"]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_it7lm")
+animation = &"close"
+autoplay = "close"
+centered = false

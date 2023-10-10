@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://tgobdv0sdwse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu1ty"]
+size = Vector2(8, 20)
+
+[node name="limit" type="StaticBody2D" groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(444, 150)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(324, 150)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(484, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(604, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(731, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(644, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(828, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(772, 198)
+shape = SubResource("RectangleShape2D_qu1ty")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="." groups=["limit"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(780, 310)
+shape = SubResource("RectangleShape2D_qu1ty")

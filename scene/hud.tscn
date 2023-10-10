@@ -1,0 +1,178 @@
+[gd_scene load_steps=20 format=3 uid="uid://cqyh3m7tcmje0"]
+
+[ext_resource type="Script" path="res://script/hud.gd" id="1_1l6pu"]
+[ext_resource type="FontFile" uid="uid://bvn44tjeyrw5l" path="res://fonts/HelpMe.ttf" id="1_ethkm"]
+[ext_resource type="Texture2D" uid="uid://bphtnplqwqrko" path="res://assents/itens/weapons.png" id="2_d0eas"]
+[ext_resource type="Texture2D" uid="uid://b7ggfsymmupq6" path="res://assents/itens/IconMedizine_Color-Sheet.png" id="3_n1ly0"]
+[ext_resource type="Texture2D" uid="uid://bc1uetuk85qu7" path="res://assents/itens/WeaponPistolAmmoBig_Color-Sheet.png" id="4_20vff"]
+[ext_resource type="PackedScene" uid="uid://dycyl1gkhph3w" path="res://scene/card.tscn" id="6_beln1"]
+[ext_resource type="Texture2D" uid="uid://bqp60se7176am" path="res://assents/itens/key-blue.png" id="6_icdif"]
+[ext_resource type="Texture2D" uid="uid://dfwrfofald75a" path="res://assents/itens/key-white.png" id="7_rryob"]
+[ext_resource type="PackedScene" uid="uid://baivh722lh2m5" path="res://scene/sample.tscn" id="9_ioncr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnjad"]
+atlas = ExtResource("4_20vff")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6xqs"]
+atlas = ExtResource("4_20vff")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6f7m"]
+atlas = ExtResource("4_20vff")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhrk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnjad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6xqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6f7m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1sxd"]
+atlas = ExtResource("3_n1ly0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po4o2"]
+atlas = ExtResource("3_n1ly0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jto1l"]
+atlas = ExtResource("3_n1ly0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0rb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1sxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po4o2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jto1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k22dd"]
+atlas = ExtResource("2_d0eas")
+region = Rect2(12, 110, 24, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6oig3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k22dd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_1l6pu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 59.0
+offset_bottom = 61.0
+
+[node name="shells" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 51.0
+offset_right = 33.0
+offset_bottom = 78.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ethkm")
+theme_override_font_sizes/font_size = 20
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="shells2" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(-4.5, 62)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_nhrk8")
+autoplay = "default"
+frame_progress = 0.0997445
+
+[node name="health" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -17.0
+offset_right = 40.0
+offset_bottom = 10.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ethkm")
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="health2" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(-6, -6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_h0rb8")
+autoplay = "default"
+frame_progress = 0.656944
+
+[node name="ammo" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 19.0
+offset_right = 31.0
+offset_bottom = 46.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ethkm")
+theme_override_font_sizes/font_size = 20
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ammo3" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(-5, 31)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_6oig3")
+frame_progress = 0.365413
+
+[node name="Card" parent="Control" instance=ExtResource("6_beln1")]
+visible = false
+position = Vector2(407, -2)
+scale = Vector2(0.3, 0.3)
+
+[node name="keyBlue" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(390, -20)
+texture = ExtResource("6_icdif")
+centered = false
+hframes = 12
+
+[node name="keyWhite" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(390, -20)
+texture = ExtResource("7_rryob")
+centered = false
+hframes = 12
+
+[node name="sample" parent="." instance=ExtResource("9_ioncr")]
+visible = false
+position = Vector2(449, 16)
+rotation = 0.785398

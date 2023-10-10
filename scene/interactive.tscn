@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://csi08skjv1pdq"]
+
+[ext_resource type="Texture2D" uid="uid://bxuprdtjarvtd" path="res://assents/backgroud/flatLight34.png" id="1_mofb7"]
+[ext_resource type="Script" path="res://script/interactive.gd" id="1_vnt8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqej8"]
+size = Vector2(52, 51)
+
+[node name="interactive" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vnt8w")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -18.0
+offset_right = 20.0
+offset_bottom = 22.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(11, 9)
+scale = Vector2(0.15, 0.143)
+texture = ExtResource("1_mofb7")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 13)
+shape = SubResource("RectangleShape2D_bqej8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

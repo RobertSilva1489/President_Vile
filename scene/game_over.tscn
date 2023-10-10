@@ -1,0 +1,112 @@
+[gd_scene load_steps=14 format=3 uid="uid://cdv35y3tmwioi"]
+
+[ext_resource type="Script" path="res://script/game_over.gd" id="1_dtyh4"]
+[ext_resource type="Texture2D" uid="uid://jyintg68s8gj" path="res://assents/backgroud/gameover.png" id="1_wl16g"]
+[ext_resource type="Texture2D" uid="uid://dqir3wo4p6wil" path="res://assents/sprite/Nera/death ground/death12.png" id="2_dotd4"]
+[ext_resource type="Shader" path="res://shader/wave.gdshader" id="2_yeklk"]
+[ext_resource type="Shader" path="res://shader/wind.gdshader" id="3_egsd3"]
+[ext_resource type="Texture2D" uid="uid://hnujqebwtq1u" path="res://assents/backgroud/Continue  col_Button.png" id="3_ejrtu"]
+[ext_resource type="Texture2D" uid="uid://th5f6jy31auh" path="res://assents/backgroud/Quit  col_Button.png" id="4_en8ej"]
+[ext_resource type="AudioStream" uid="uid://duuyf43umvrga" path="res://sfx/Select3.wav" id="6_ihd2c"]
+[ext_resource type="AudioStream" uid="uid://dotoqt4qh4w3s" path="res://sfx/anxiety.ogg" id="6_swuvm"]
+[ext_resource type="Texture2D" uid="uid://bv8giyio07sgq" path="res://assents/backgroud/Menu  col_Button.png" id="7_qd41s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ax1q6"]
+shader = ExtResource("2_yeklk")
+shader_parameter/WATER_COL = Color(1, 0, 0, 1)
+shader_parameter/WATER2_COL = Color(100, 0, 0, 1)
+shader_parameter/FOAM_COL = Color(0.81, 0, 0, 1)
+shader_parameter/distortion_speed = 10.0
+shader_parameter/tile = Vector2(1, 200)
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_rt44b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcmfg"]
+shader = ExtResource("3_egsd3")
+shader_parameter/speed = 2.0
+shader_parameter/minStrength = 0.277
+shader_parameter/maxStrength = 0.01
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = null
+shader_parameter/offset = 0.0
+
+[node name="Game Over" type="Node2D"]
+script = ExtResource("1_dtyh4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.501961, 0.0117647, 0, 0.639216)
+material = SubResource("ShaderMaterial_ax1q6")
+position = Vector2(1.75003, -5.24998)
+scale = Vector2(802.5, 602.5)
+texture = SubResource("CanvasTexture_rt44b")
+centered = false
+
+[node name="nera" type="Sprite2D" parent="."]
+position = Vector2(400, 238)
+scale = Vector2(3, 3)
+texture = ExtResource("2_dotd4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wcmfg")
+position = Vector2(411, 128)
+scale = Vector2(0.355705, 0.318117)
+texture = ExtResource("1_wl16g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -135.0
+offset_top = -78.0
+offset_right = -95.0
+offset_bottom = -38.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 408.0
+offset_right = 661.0
+offset_bottom = 471.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Button"]
+position = Vector2(109.75, 31)
+scale = Vector2(0.364167, 0.325)
+texture = ExtResource("3_ejrtu")
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 494.0
+offset_right = 664.0
+offset_bottom = 557.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Button2"]
+position = Vector2(108, 32)
+scale = Vector2(0.364, 0.325)
+texture = ExtResource("7_qd41s")
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 580.0
+offset_right = 664.0
+offset_bottom = 643.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/Button3"]
+position = Vector2(108, 32)
+scale = Vector2(0.364, 0.325)
+texture = ExtResource("4_en8ej")
+
+[node name="select" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("6_ihd2c")
+pitch_scale = 1.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_swuvm")
+volume_db = -20.0
+pitch_scale = 1.5
+autoplay = true
+mix_target = 1

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sw8lcccngyg0"
+path="res://.godot/imported/dark dungeon.ogg-579b2fb1e2244373035722be37460198.oggvorbisstr"
+
+[deps]
+
+source_file="res://sfx/dark dungeon.ogg"
+dest_files=["res://.godot/imported/dark dungeon.ogg-579b2fb1e2244373035722be37460198.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

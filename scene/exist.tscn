@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://8sf8b7u851ho"]
+
+[ext_resource type="Script" path="res://script/door.gd" id="1_bng0g"]
+[ext_resource type="Texture2D" uid="uid://cpsuyr5m344p4" path="res://assents/backgroud/Church003.png" id="2_nkyio"]
+[ext_resource type="AudioStream" uid="uid://bj0fb2or8kvxq" path="res://sfx/world1.wav" id="3_i2yww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oikos"]
+size = Vector2(50, 51)
+
+[node name="exist" type="Area2D"]
+position = Vector2(-216, -13)
+script = ExtResource("1_bng0g")
+dooor = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1467, -66.8365)
+scale = Vector2(0.1, 0.0785308)
+texture = ExtResource("2_nkyio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1490, -2.5)
+shape = SubResource("RectangleShape2D_oikos")
+
+[node name="world1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i2yww")
+pitch_scale = 1.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

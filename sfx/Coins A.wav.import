@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://difermon64psb"
+path="res://.godot/imported/Coins A.wav-70db4db26a85b618d30b1115e4227746.sample"
+
+[deps]
+
+source_file="res://sfx/Coins A.wav"
+dest_files=["res://.godot/imported/Coins A.wav-70db4db26a85b618d30b1115e4227746.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

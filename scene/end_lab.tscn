@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://l3yc8yd0n235"]
+
+[ext_resource type="Texture2D" uid="uid://kf061ssdw8bx" path="res://assents/backgroud/1.png" id="1_33x25"]
+[ext_resource type="Script" path="res://script/end_lab.gd" id="1_ul8ac"]
+[ext_resource type="Shader" path="res://shader/rain_and_snow_shader.gdshader" id="2_3ad7x"]
+[ext_resource type="Shader" path="res://shader/Envirement.gdshader" id="2_8thv4"]
+[ext_resource type="Texture2D" uid="uid://binyrhvg0ujdw" path="res://assents/backgroud/2.png" id="3_7kh4n"]
+[ext_resource type="PackedScene" uid="uid://nr5uth10liko" path="res://scene/chopper.tscn" id="4_mqswe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q3j32"]
+shader = ExtResource("2_3ad7x")
+shader_parameter/rain_amount = 300.0
+shader_parameter/near_rain_length = 0.2
+shader_parameter/far_rain_length = 0.1
+shader_parameter/near_rain_width = 1.0
+shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/base_rain_speed = 0.5
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q5xtr"]
+shader = ExtResource("2_8thv4")
+shader_parameter/move_speed = 0.5
+
+[node name="END_Lab" type="Node2D"]
+script = ExtResource("1_ul8ac")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(0.352941, 0.352941, 0.352941, 1)
+texture_filter = 1
+material = SubResource("ShaderMaterial_q3j32")
+position = Vector2(1, -2)
+scale = Vector2(1.38715, 1.86111)
+texture = ExtResource("1_33x25")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_q5xtr")
+position = Vector2(4.00002, 9.00002)
+scale = Vector2(1.37847, 0.811728)
+texture = ExtResource("3_7kh4n")
+centered = false
+
+[node name="chopper" parent="." instance=ExtResource("4_mqswe")]
+position = Vector2(-53, -54)
+scale = Vector2(2, 2)

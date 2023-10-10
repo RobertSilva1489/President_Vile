@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27rjvsine425"]
+
+[ext_resource type="Texture2D" uid="uid://cbmnwcj5rshsq" path="res://assents/backgroud/flatLight12.png" id="1_qsr0u"]
+[ext_resource type="Script" path="res://script/button_pause.gd" id="1_xmdfm"]
+
+[node name="Button_pause" type="CanvasLayer"]
+script = ExtResource("1_xmdfm")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(-12, -10)
+scale = Vector2(0.5, 0.464)
+texture_normal = ExtResource("1_qsr0u")
+passby_press = true
+action = "pause"
+visibility_mode = 1

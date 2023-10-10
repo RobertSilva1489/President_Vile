@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://baivh722lh2m5"]
+
+[ext_resource type="Texture2D" uid="uid://od6w603vov4u" path="res://assents/decor/115-transformed.png" id="1_1kb7m"]
+[ext_resource type="Script" path="res://script/sample.gd" id="2_r36ie"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a6ylr"]
+radius = 22.1493
+height = 86.0748
+
+[node name="sample" type="Sprite2D"]
+position = Vector2(149, 87)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1kb7m")
+script = ExtResource("2_r36ie")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3, 8)
+rotation = -0.733038
+shape = SubResource("CapsuleShape2D_a6ylr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
